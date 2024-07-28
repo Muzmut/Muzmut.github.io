@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -74,7 +75,7 @@
 						<div class="col-md-8 col-md-offset-2 text-center">
 							<h1 class="to-animate">Muzmut - School</h1>
 							<h2 class="to-animate">Școala noastră este un nou nivel de educație în Moldova, cu cea mai largă gamă de cursuri de studiu.</h2>
-							<h2 class="to-animate">↓ Selectați o limbă cu care vă simțiți confortabil ↓</h2>
+							<h2 class="to-animate">↓Selectați o limbă cu care vă simțiți confortabil↓</h2>
 							<h3 class="to-animate"><a href="ru.html">Russian</a></h3>
 							<h3 class="to-animate"><a href="index.html">English</a></h3>
 						</div>
@@ -252,83 +253,20 @@
 					<div class="clearfix visible-sm-block"></div>
 					<div class="col-md-3 col-sm-6 to-animate">
 						<div class="price-box popular">
-							<div class="popular-text">Лучшее предложение</div>
+							<div class="popular-text">Best value</div>
 							<h2 class="pricing-plan" id="HTML">HTML</h2>
 							<div class="price"><sup class="currency">$</sup>40<small></small></div>
-							<p>Основы языка</p>
+							<p>Basic language training</p>
 							<hr>
 							<ul class="pricing-info">
-								<li>• Для начинающих</li>
-								<li>• Задания</li>
-								<li>• 20 часов</li>
-								<li>• Удаленно</li>
+								<li>• Beginner</li>
+								<li>• Tasks</li>
+								<li>• 20 Hours</li>
+								<li>• Remote</li>
 							</ul>
-							<p><a href="#" id="readMoreButton" class="btn btn-primary">Подробнее</a></p>
+							<p><a href="#" class="btn btn-primary">Read More</a></p>
 						</div>
 					</div>
-					<script>
-						const apiKey = 'lbvdpENlsxmdnghpEt6FoZd9STvrIUzOSgQBkC6KhjDSyn0cdr4YbIfYVg70ON3ucwdqnnx0qbTStjQ7ArEDbzQF9hrLvp5KBCjOXHBe64EHj0vmTAMSMkUVVZSsahnL';
-						const merchantId = '628bea42-448a-42b0-bb56-e6d5d4702b5a';
-
-						// Функция для генерации подписи
-						function generateSign(data, apiKey) {
-							return CryptoJS.HmacSHA256(data, apiKey).toString(CryptoJS.enc.Hex);
-						}
-
-						document.getElementById('readMoreButton').addEventListener('click', function(event) {
-							event.preventDefault(); // Предотвращаем стандартное поведение ссылки
-
-							console.log("Кнопка нажата"); // Отладочное сообщение
-
-							const amount = "40";
-							const currency = "USD";
-							const orderId = new Date().getTime().toString(); // Генерация уникального order_id
-							const data = JSON.stringify({
-								"amount": amount,
-								"currency": currency,
-								"order_id": orderId
-							});
-
-							console.log("Данные запроса:", data); // Отладочное сообщение
-
-							const sign = generateSign(data, apiKey);
-
-							console.log("Сгенерированная подпись:", sign); // Отладочное сообщение
-
-							// Определяем API endpoint и заголовки
-							const apiUrl = 'https://api.cryptomus.com/v1/payment';
-							const headers = new Headers();
-							headers.append('merchant', merchantId); // Замените на ваш реальный идентификатор мерчанта
-							headers.append('sign', sign);
-							headers.append('Content-Type', 'application/json');
-
-							console.log("Заголовки запроса:", headers); // Отладочное сообщение
-
-							// Отправляем запрос с использованием fetch
-							fetch(apiUrl, {
-								method: 'POST',
-								headers: headers,
-								body: data
-							})
-							.then(response => {
-								console.log("Статус ответа:", response.status); // Отладочное сообщение
-								return response.json();
-							})
-							.then(responseData => {
-								console.log("Ответ от API:", responseData); // Отладочное сообщение
-								if (responseData.url) {
-									// Перенаправляем пользователя на страницу оплаты
-									window.location.href = responseData.url;
-								} else {
-									alert('Не удалось сгенерировать ссылку для оплаты.');
-								}
-							})
-							.catch(error => {
-								console.error('Ошибка:', error);
-								alert('Произошла ошибка. Пожалуйста, попробуйте еще раз.');
-							});
-						});
-					</script>
 					<div class="clearfix visible-sm-block"></div>
 					<div class="col-md-3 col-sm-6 to-animate">
 						<div class="price-box popular">
@@ -590,11 +528,7 @@ Fiecare dintre cursurile de la MuzmutSchool sunt concepute de instructori profes
 	</div>
 	<!-- <div id="map" class="fh5co-map"></div> -->
 
-
-	<!-- Включение jQuery (опционально) -->
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<!-- Включение библиотеки CryptoJS для хеширования -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>								
+	
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
